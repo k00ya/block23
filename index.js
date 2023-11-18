@@ -121,3 +121,13 @@ const addNewPlayer = async (playerObj) => {
       console.error("Uh oh, trouble rendering the new player form!", err);
     }
   };
+
+  // Initial function to load all players and set up the form on page load
+const init = async () => {
+    const players = await fetchAllPlayers();
+    renderAllPlayers(players);
+    renderNewPlayerForm();
+  };
+  
+  init(); // Calling the init function to start the app
+  ``
