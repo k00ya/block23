@@ -1,5 +1,5 @@
 const playerContainer = document.getElementById('all-players-container');
-const newPlayerFormContainer = document.getElementById('new-player-form');
+const newPlayerFormContainer = document.getElementById('new-player-form-container');
 
 // Replace 'YOUR COHORT NAME HERE' with your actual cohort name
 const cohortName = '2308-ACC-PT-WEB-PT';
@@ -54,10 +54,10 @@ const removePlayer = async (playerId) => {
     }
 };
 
-const renderAllPlayers = (playerList) => {
+const renderAllPlayers = (playerList, maxPlayers = 10) => {
     try {
         let playerContainerHTML = '';
-        playerList.forEach(player => {
+        playerList.slice(0, maxPlayers).forEach(player => {
             playerContainerHTML += `
                 <div class="player-card">
                     <img src="${player.imageUrl}" alt="${player.name}">
@@ -104,9 +104,11 @@ const renderNewPlayerForm = () => {
     }
 };
 
+
+
 const init = async () => {
     const players = await fetchAllPlayers();
-    renderAllPlayers(players);
+    renderAllPlayers(players); // You can pass a different number here if you want to display more or less than 10 players initially
     renderNewPlayerForm();
 };
 
