@@ -1,76 +1,130 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+* {
+    box-sizing: border-box;
     margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 0;
 }
 
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Container for all player cards */
 #all-players-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    width: 100%;
-    max-width: 1200px; /* Adjust max-width as needed */
+    padding: 20px;
 }
 
+/* Player card styles */
 .player-card {
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     padding: 15px;
-    border-radius: 8px;
+    margin: 0 auto; /* Center card within the grid */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space content evenly */
     overflow: hidden;
 }
 
 .player-card img {
     width: 100%;
-    height: 200px; /* Fixed height for images */
-    object-fit: cover; /* Adjusts the image size to cover the area */
-    border-radius: 4px;
+    object-fit: cover;
+    height: 200px; /* Fixed height for all images */
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .player-card h3 {
-    margin: 10px 0 5px 0;
+    margin-bottom: 5px;
     color: #333;
 }
 
 .player-card p {
-    margin: 5px 0;
     color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
 }
 
+/* Button styles */
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Form styles */
 #new-player-form-container {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 600px; /* Adjust max-width as needed */
-}
-
-#new-player-form {
-    background-color: white;
+    background: #fff;
+    border: 1px solid #ddd;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width */
+    max-width: 600px; /* Maximum width of the form */
+    margin: 20px auto; /* Center the form in the page */
 }
 
-#new-player-form input[type="text"] {
+#new-player-form input,
+#new-player-form select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 #new-player-form button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
     background-color: #007bff;
     color: white;
-    padding: 10px 15px;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
 
 #new-player-form button:hover {
     background-color: #0056b3;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+    .player-card {
+        padding: 10px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.8em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    #new-player-form-container {
+        padding: 10px;
+    }
+
+    #new-player-form input,
+    #new-player-form select,
+    #new-player-form button {
+        font-size: 0.8em; /* Smaller text on smaller screens */
+    }
 }
