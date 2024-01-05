@@ -1,14 +1,12 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: #36636e;
+    padding: 20px; /* Restored padding to maintain original body padding */
 }
 
 /* Container for all player cards */
@@ -16,84 +14,80 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    padding: 20px;
+    padding: 20px; /* Restored padding for the grid container */
 }
 
 /* Player card styles */
 .player-card {
-    background: #fff;
+    background: #bcc0b0;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 40px;
     padding: 15px;
-    margin: 0 auto; /* Center card within the grid */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Space content evenly */
-    overflow: hidden;
+    justify-content: space-between;
 }
 
 .player-card img {
     width: 100%;
-    object-fit: cover;
-    height: 200px; /* Fixed height for all images */
-    border-radius: 5px;
+    height: 200px;
+    border-radius: 40px;
     margin-bottom: 10px;
 }
 
-.player-card h3 {
-    margin-bottom: 5px;
-    color: #333;
+.player-card h3,
+.player-card p {
+    color: #333; /* Consolidated color for text elements */
+    margin-bottom: 10px;
 }
 
 .player-card p {
-    color: #666;
     font-size: 0.9em;
-    margin-bottom: 10px;
+    color: #666; /* Specific color for paragraph text */
 }
 
-/* Button styles */
-button {
-    background-color: #5cb85c;
+.player-card button {
+    background-color: #447799;
     color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 0.9em;
+    margin-top: 5px; /* Only the top margin is necessary for stacking */
 }
 
-button:hover {
+.player-card button:hover {
     opacity: 0.8;
 }
 
 /* Form styles */
 #new-player-form-container {
-    background: #fff;
-    border: 1px solid #ddd;
+    background: #ccd4d4d8;
+    border: 2px solid #6c8b78;
+    border-radius: 40px;
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Full width */
-    max-width: 600px; /* Maximum width of the form */
-    margin: 20px auto; /* Center the form in the page */
+    box-shadow: 0 2px 4px rgba(248, 246, 231, 0.904);
+    margin: 20px auto; /* Keeps the form centered */
+    max-width: 500px; /* New max-width to control the width */
 }
+
 
 #new-player-form input,
 #new-player-form select {
-    width: 100%;
+    width: calc(100% - 20px); /* Adjusted for padding */
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; /* Unified border style for form elements */
     border-radius: 5px;
 }
 
 #new-player-form button {
-    width: 100%;
+    width: calc(100% - 20px); /* Adjusted for padding */
     padding: 10px;
-    border-radius: 5px;
-    background-color: #007bff;
+    border-radius: 40px;
+    background-color: #4f7fb3;
     color: white;
     border: none;
     cursor: pointer;
@@ -105,26 +99,38 @@ button:hover {
 
 /* Responsive layout adjustments */
 @media (max-width: 768px) {
-    .player-card {
-        padding: 10px;
-    }
-
-    button {
-        padding: 8px 15px;
-        font-size: 0.8em;
-    }
-
-    .container {
-        padding: 10px;
-    }
-
+    .player-card,
     #new-player-form-container {
         padding: 10px;
     }
 
+    button,
     #new-player-form input,
     #new-player-form select,
     #new-player-form button {
-        font-size: 0.8em; /* Smaller text on smaller screens */
+        padding: 8px 15px;
+        font-size: 0.8em;
     }
 }
+
+.back-home {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #97e3fa; /* White background */
+    color: #0d6980; /* Color matching the gradient */
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border: 2px solid #2193b0; /* Border matching the gradient color */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    text-decoration: none; /* This line removes the underline */
+}
+
+.back-home:hover {
+    background-color: #2193b0; /* Background color change on hover */
+    color: #fff; /* Text color change on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
