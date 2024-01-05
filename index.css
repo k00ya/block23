@@ -3,11 +3,18 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #36636e;
-    padding: 20px; /* Restored padding to maintain original body padding */
+    background-image: url('https://st3.depositphotos.com/10325516/13525/i/450/depositphotos_135259682-stock-photo-american-football-field.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #3d2453;
+    text-align: center;
+    min-height: 100vh; /* Ensure it covers the full viewport height */
 }
+
 
 /* Container for all player cards */
 #all-players-container {
@@ -19,7 +26,7 @@ body {
 
 /* Player card styles */
 .player-card {
-    background: #bcc0b0;
+    background: #bcc0b03a;
     border: 1px solid #ddd;
     border-radius: 40px;
     padding: 15px;
@@ -38,13 +45,13 @@ body {
 
 .player-card h3,
 .player-card p {
-    color: #333; /* Consolidated color for text elements */
+    color: #083fa7; /* Consolidated color for text elements */
     margin-bottom: 10px;
 }
 
 .player-card p {
     font-size: 0.9em;
-    color: #666; /* Specific color for paragraph text */
+    color: #da1010; /* Specific color for paragraph text */
 }
 
 .player-card button {

@@ -1,17 +1,21 @@
 body {
+    background-image: url('https://st3.depositphotos.com/10325516/13525/i/450/depositphotos_135259682-stock-photo-american-football-field.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #6dd5ed, #2193b0); /* Light blue gradient */
-    color: #3d2453; /* White text color for better contrast */
+    color: #3d2453;
     text-align: center;
+    min-height: 100vh; /* Ensure it covers the full viewport height */
 }
 
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for the container */
+    background-color: rgba(65, 112, 33, 0.219); /* Semi-transparent white for the container */
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow to the container */
@@ -28,7 +32,7 @@ p {
 
 a.button {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #2b4226;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -43,3 +47,70 @@ a.button:hover {
     background-color: #0056b3;
 }
 
+.carousel-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    height: 500px; /* Adjust as needed */
+    width: 100%; /* Take full width of the parent container */
+    margin-top: 30px; /* Space above the carousel */
+    margin-bottom: 30px; /* Space below the carousel */
+}
+
+.carousel {
+    position: relative;
+    width: 600px; /* Width of the carousel */
+    height: 400px; /* Height of the carousel */
+    transform-style: preserve-3d;
+    animation: rotate360 60s infinite forwards linear;
+    margin: 0 auto; /* Centering the carousel itself */
+}
+
+.carousel__face { 
+    position: absolute;
+    width: 300px;
+    height: 187px;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5); /* Dimming effect on images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px; /* Rounded corners like container */
+}
+
+  .carousel__face:nth-child(1) {
+    background-image: url("https://i.pinimg.com/736x/ef/0a/f6/ef0af66a518a027163be074a3ef767ee.jpg");
+    transform: rotateY(  0deg) translateZ(430px); }
+  .carousel__face:nth-child(2) { 
+    background-image: url("https://i.pinimg.com/originals/03/7c/d3/037cd37db5fa028bbf06e0d2af9bbb1c.gif");
+      transform: rotateY( 40deg) translateZ(430px); }
+  .carousel__face:nth-child(3) {
+    background-image: url("https://media.giphy.com/media/RQSuZfuylVNAY/giphy.gif");
+    transform: rotateY( 80deg) translateZ(430px); }
+  .carousel__face:nth-child(4) {
+    background-image: url("https://media3.giphy.com/media/l3vRmiPDHYMxn9Eys/giphy.gif");
+    transform: rotateY(120deg) translateZ(430px); }
+  .carousel__face:nth-child(5) { 
+    background-image: url("https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61bueMdnn0L.jpg");
+   transform: rotateY(160deg) translateZ(430px); }
+  .carousel__face:nth-child(6) { 
+    background-image: url("https://i.insider.com/5c005d9bac00e20fe169f725?width=700");
+   transform: rotateY(200deg) translateZ(430px); }
+  .carousel__face:nth-child(7) { 
+    background-image: url("https://www.boredpanda.com/blog/wp-content/uploads/2023/04/644a230e3f5d4_l7ink8py2vta1__700.jpg");
+   transform: rotateY(240deg) translateZ(430px); }
+  .carousel__face:nth-child(8) {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Funny_Image_of_Dog_with_open_teeth.png/640px-Funny_Image_of_Dog_with_open_teeth.png");
+    transform: rotateY(280deg) translateZ(430px); }
+  .carousel__face:nth-child(9) {
+    background-image: url("https://gifdb.com/images/high/dog-on-the-driving-seat-mgzf1tk2lv6zyiwa.gif");
+    transform: rotateY(320deg) translateZ(430px); }
+  
+    @keyframes rotate360 {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(-360deg);
+        }
+    }
