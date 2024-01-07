@@ -51,7 +51,7 @@ body {
 
 .player-card p {
     font-size: 0.9em;
-    color: #da1010; /* Specific color for paragraph text */
+    color: #000000; /* Specific color for paragraph text */
 }
 
 .player-card button {

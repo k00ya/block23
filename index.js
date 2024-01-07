@@ -129,6 +129,7 @@ const renderAllPlayers = (playerList) => {
       <div class="player-card" id="player-${player.id}">
         <img src="${player.imageUrl}" alt="${player.name}">
         <h3>${player.name}</h3>
+        <p>teamId: ${player.teamId}</p>
         <p>Breed: ${player.breed}</p>
         <p>Status: ${player.status}</p>
         <button class="details-button" data-player-id="${player.id}">See Details</button>
@@ -196,6 +197,7 @@ const renderNewPlayerForm = () => {
     formContainer.innerHTML = `
       <form id="new-player-form">
         <input type="text" id="player-name" placeholder="Player Name" required>
+        <input type="text" id="player-teamId" placeholder="Team ID" required>
         <input type="text" id="player-breed" placeholder="Breed" required>
         <select id="player-status">
           <option value="field">Field</option>
@@ -212,6 +214,7 @@ const renderNewPlayerForm = () => {
         e.preventDefault();
         const newPlayer = {
           name: document.getElementById("player-name").value,
+          teamId: document.getElementById("player-teamId").value, // Updated to camelCase
           breed: document.getElementById("player-breed").value,
           status: document.getElementById("player-status").value,
           imageUrl: document.getElementById("player-image-url").value,
@@ -224,6 +227,7 @@ const renderNewPlayerForm = () => {
     console.error("Uh oh, trouble rendering the new player form!", err);
   }
 };
+
 
 const init = async () => {
   try {
