@@ -10,7 +10,7 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
 /**
  * It fetches all players from the API and returns them
  * @returns An array of objects.
- */     
+ */
 
 const fetchAllPlayers = async () => {
   try {
@@ -161,17 +161,27 @@ const renderAllPlayers = (playerList) => {
 function handleSeeDetails(playerId) {
   fetchSinglePlayer(playerId)
     .then((playerDetails) => {
-      // Logic to display the player details
-      console.log(playerDetails); // Placeholder for actual implementation
+      // Log the details in the console
+      console.log("Player Details:", playerDetails);
 
-      // Display an alert to the user
-      alert('Player details loaded. Check the console for more information.');
+      // Continue with the existing code to display details in the UI
+      const detailsHTML = `
+        <div class="player-details">
+          <h3>Details for ${playerDetails.name}</h3>
+          <img class="player-detail-image" src="${playerDetails.imageUrl}" alt="${playerDetails.name}">
+          <p>Team ID: ${playerDetails.teamId}</p>
+          <p>Breed: ${playerDetails.breed}</p>
+          <p>Status: ${playerDetails.status}</p>
+          <!-- other details -->
+        </div>
+      `;
+
+      const detailsContainer = document.getElementById("player-details-container");
+      detailsContainer.innerHTML = detailsHTML;
     })
     .catch((err) => {
       console.error("Error fetching player details:", err);
-
-      // Display an error alert to the user
-      alert('Error fetching player details. Check the console for error information.');
+      alert("Error fetching player details. Check the console for error information.");
     });
 }
 
@@ -227,7 +237,6 @@ const renderNewPlayerForm = () => {
     console.error("Uh oh, trouble rendering the new player form!", err);
   }
 };
-
 
 const init = async () => {
   try {

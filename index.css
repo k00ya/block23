@@ -120,6 +120,28 @@ body {
     }
 }
 
+.player-details {
+    background-color: #b15d5d;
+    border: 1px solid #2e393d;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px auto; /* centers the div and adds margin at the top */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px; /* specific width */
+    /* or use max-width for a more flexible layout */
+    max-width: 90%; /* This will make sure it doesn't exceed 90% of the parent element's width */
+  }
+  
+  
+  .player-detail-image {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image */
+  }
+  
+  
+
 .back-home {
     position: fixed;
     top: 20px;
